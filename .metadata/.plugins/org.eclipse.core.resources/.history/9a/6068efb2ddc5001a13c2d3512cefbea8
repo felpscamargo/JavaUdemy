@@ -1,0 +1,36 @@
+package entities;
+
+public class Company extends TaxPayer{
+
+	private int numberofEmployees;
+	
+	public Company() {
+	}
+
+	public Company(int numberofEmployees) {
+		this.numberofEmployees = numberofEmployees;
+	}
+
+	public int getNumberofEmployees() {
+		return numberofEmployees;
+	}
+
+	public void setNumberofEmployees(int numberofEmployees) {
+		this.numberofEmployees = numberofEmployees;
+	}
+
+	@Override
+	public Double tax() {
+		Double total = 0.0;
+		
+		if(numberofEmployees < 10) {
+			total = (getAnualIncome() * (16 / 100));
+		}
+		
+		else {
+			total = (getAnualIncome() * (14 / 100));
+		}
+		
+		return total;
+	}
+}

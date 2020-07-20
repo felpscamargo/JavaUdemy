@@ -1,0 +1,32 @@
+package entities;
+
+public class Individual extends TaxPayer{
+
+	private Double healthExpenditures;
+	
+	public Individual() {
+	}
+	
+	public Individual(Double healthExpenditures) {
+		this.healthExpenditures = healthExpenditures;
+	}
+	
+	public Double SetHealthExpenditures() {
+		return healthExpenditures;
+	}
+	
+	public void GetHealthExpenditures(Double healthExpenditures) {
+		this.healthExpenditures = healthExpenditures;
+	}
+
+	@Override
+	public Double tax() {
+		Double total;
+		
+		if(getAnualIncome() < 20000) {
+			total = (getAnualIncome() * (25 / 100)) - (healthExpenditures * (50 / 100));
+		}
+		
+		return 0.0;
+	}
+}

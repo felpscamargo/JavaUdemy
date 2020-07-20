@@ -1,0 +1,27 @@
+package entities;
+
+public class Company extends TaxPayer{
+
+	private int numberofEmployees;
+	
+	public Company() {
+	}
+
+	public Company(int numberofEmployees) {
+		this.numberofEmployees = numberofEmployees;
+	}
+
+	public int getNumberofEmployees() {
+		return numberofEmployees;
+	}
+
+	public void setNumberofEmployees(int numberofEmployees) {
+		this.numberofEmployees = numberofEmployees;
+	}
+
+	@Override
+	public Double tax() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
